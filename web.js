@@ -5,13 +5,8 @@ var fs = require("fs");
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-    fs.readFileSync("/home/Songs_and_Docs/Study/coursera/startup/bitstarter/index.html",function(err,data){
-	if(err){
-	   throw err;
-	}else{
-	   var buffer = new Buffer(data);
-	}
-    });
+  var str = fs.readFileSync("/home/Songs_and_Docs/Study/coursera/startup/bitstarter/index.html","utf-8");
+  var buffer = new Buffer(str);
   response.send(buffer.toString("utf-8"));
 });
 
