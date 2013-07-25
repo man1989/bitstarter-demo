@@ -30,7 +30,7 @@ var CHECKSFILE_DEFAULT = "checks.json";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
-    console.log(instr);
+    //console.log(instr);
     if(!fs.existsSync(instr)) {
         console.log("%s does not exist. Exiting.", instr);
         process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
@@ -93,7 +93,7 @@ if(require.main == module) {
         .parse(process.argv);
     if(program.url)
        var checkJson = checkUrl(program.url, program.checks,function(result){
-           console.log("ok "+result);    
+           //console.log("ok "+result);    
            var outJson = JSON.stringify(result, null, 4);
            console.log(outJson);
        });
